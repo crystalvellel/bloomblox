@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bloom Box</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">bloom<span>box</span></div>
+  <nav>
+    <a href="#">Collection</a>
+    <a href="#">Series</a>
+    <a href="#">Gallery</a>
+    <a href="#">About</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-text">
+    <p class="hero-eyebrow fade-up">Series 01 — Eternal Garden</p>
+    <h1 class="hero-title fade-up delay-1">Every box holds<br>a <em>secret</em><br>in bloom.</h1>
+    <p class="hero-desc fade-up delay-2">Open a mystery box and discover a rare virtual flower to add to your collection. 12 varieties. 3 secret editions. Which one will you find?</p>
+    <div class="fade-up delay-3">
+      <button class="btn-primary" onclick="openBox()">Open a Box</button>
+      <a href="#collection" class="btn-secondary">View All</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div id="petals"></div>
+    <div class="blindbox-container fade-up delay-2" onclick="openBox()">
+      <div class="box-lid"><span class="lid-brand">Bloom Box</span></div>
+      <div class="box-body">
+        <div class="box-pattern"></div>
+        <div class="box-question">?</div>
+        <div class="box-label">
+          <span class="brand">Bloom Box</span>
+          <span class="series">Eternal Garden · S01</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="stats-bar">
+  <div class="stat"><span class="stat-num" id="collectedCount">0</span><span class="stat-label">Collected</span></div>
+  <div class="stat"><span class="stat-num">12</span><span class="stat-label">Total Varieties</span></div>
+  <div class="stat"><span class="stat-num">3</span><span class="stat-label">Secret Editions</span></div>
+  <div class="stat"><span class="stat-num" id="rarityCount">0</span><span class="stat-label">Rare Finds</span></div>
+</div>
+
+<section class="section" id="collection">
+  <div class="section-header">
+    <h2 class="section-title">The <em>Collection</em></h2>
+    <span class="section-sub">Discover all varieties</span>
+  </div>
+  <div class="flowers-grid" id="flowerGrid"></div>
+</section>
+
+<footer>
+  <p>© 2026 Bloom Box — Virtual Collectibles</p>
+  <p>Series 01: Eternal Garden · 12 varieties</p>
+</footer>
+
+<div class="modal-bg" id="modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-flower" id="modalFlower"></div>
+    <div class="modal-badge" id="modalRarity"></div>
+    <h2 class="modal-title" id="modalName"></h2>
+    <p class="modal-desc" id="modalDesc"></p>
+    <button class="btn-primary" onclick="closeModal()">Add to Collection</button>
+  </div>
+</div>
+<script src="index.js"></script>
+</body>
+</html>
